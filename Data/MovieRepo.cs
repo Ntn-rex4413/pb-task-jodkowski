@@ -23,7 +23,8 @@ namespace MovieCatalogAPI.Data
 
         public Movie? GetLastAddedMovie()
         {
-            return _context.Movies.OrderBy(x => x.DateAdded).FirstOrDefault();
+            return _context.Movies
+                .OrderByDescending(x => x.DateAdded).FirstOrDefault();
         }
 
         public IEnumerable<Movie> GetMoviesByGenre(string genre)
