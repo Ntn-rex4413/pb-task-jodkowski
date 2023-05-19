@@ -11,6 +11,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseInMemoryDatabase("MoviesDatabase"));
 
+builder.Services.AddScoped<IMovieRepo, MovieRepo>();
+
 var app = builder.Build();
 
 app.UseHttpLogging();
