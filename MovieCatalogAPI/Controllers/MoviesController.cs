@@ -56,7 +56,8 @@ namespace MovieCatalogAPI.Controllers
             return Ok(_mapper.Map<IEnumerable<MovieReadDto>>(movies));
         }
 
-        [HttpGet("{genre:alpha}")]
+        [HttpGet]
+        [Route(@"{genre:regex(^[[a-z\-]]{{1,50}}$)}")]
         public ActionResult<IEnumerable<MovieReadDto>> GetMoviesByGenre(string genre)
         {
             var movies = _repository.GetMoviesByGenre(genre.ToUpper());
