@@ -13,11 +13,6 @@ namespace MovieCatalogAPI.Data
 
         public void CreateMovie(Movie movie)
         {
-            if (movie == null)
-            {
-                throw new ArgumentNullException(nameof(movie));
-            }
-
             _context.Movies.Add(movie);
         }
 
