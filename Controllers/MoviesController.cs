@@ -36,7 +36,7 @@ namespace MovieCatalogAPI.Controllers
         }
 
         [HttpGet]
-        public ActionResult<string> GetLastAddedMovie()
+        public ActionResult<MovieReadDto> GetLastAddedMovie()
         {
             var movie = _repository.GetLastAddedMovie();
 
